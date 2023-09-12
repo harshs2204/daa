@@ -1,0 +1,60 @@
+import java.util.Scanner;
+public class Subset 
+{
+	static void subset(int SumSoFar,int index,int remsum,int set[],int solution[],int target)
+	{
+		int count=0;
+		solution[index]=1;
+		if(SumSoFar+set[index]==target)
+		{
+			System.out.println("SOLUTION NO = "+(++count));
+			for(int i=0;i<=index;i++)
+			{
+				if(solution[i]==1)
+					System.out.println(""+set[i]);
+			}
+		}
+		else if(SumSoFar+set[index]+set[index+1]<=target)
+		{
+			subset(SumSoFar+set[index],index+1,remsum-set[index],set,solution,target);
+		}
+		if((SumSoFar+remsum-set[index]>=target)&&(SumSoFar+set[index+1]<=target))
+		{
+			solution[index]=0;
+			subset(SumSoFar,index+1,remsum-set[index],set,solution,target);
+		 }
+		
+	}
+	
+   public static void main(String[] args) 
+   {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("ENTER THE NUMBER OF INTEGERS : ");
+		int n=sc.nextInt();
+		 
+		int set[]=new int[n];
+		int solution[]=new int[n];
+		int target;
+		
+		
+		System.out.println("ENTER THE INTEGERS IN ASCENDING ORDER : ");
+		for(int i=0;i<n;i++)
+			set[i]=sc.nextInt();
+		System.out.println("ENTER THE TARGET SUM : ");
+		target=sc.nextInt();
+		int sum=0;
+		for(int i=0;i<n;i++)
+			sum=sum+set[i];
+		
+		if(target>sum)
+		{
+			System.out.println("SOLUTIION DOESN'T EXIST");
+			System.exit(0);
+		}
+		
+		System.out.println("THE SOLUTION ARE : ");
+		subset(0,0,sum,set,solution,target);
+
+	}
+
+}

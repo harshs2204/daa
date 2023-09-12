@@ -1,0 +1,59 @@
+import java.util.Scanner;
+public class TSP 
+{
+	static int c(int i,int visited[],int n,int cost[][])
+	{
+		int min=999,val,j;
+		int s[]=new int[n];
+		boolean flag=false;
+		
+		for(j=0;j<n;j++)
+			s[j]=visited[j];
+		
+		s[i]=1;
+		
+		if(n==1)
+			return cost[i][1];
+		
+		for(j=0;j<n;j++)
+		{
+			if(s[j]==0)
+			{
+				flag=true;
+				val=cost[i][j]+c(j,s,n,cost);
+				
+				if(val<min)
+					min=val;
+			}
+		}
+		if(!flag)
+			min=cost[i][1];
+		
+		return min;
+	}
+   public static void main(String args[])
+   {
+	   Scanner sc=new Scanner(System.in);
+	   int i,j,n,min_cost;
+	   
+	   System.out.println("ENTER THE NUMBER OF CITIES : ");
+	   n=sc.nextInt();
+	   
+	   int cost[][]=new int[n][n];
+	   int visited[]=new int[n];
+	   
+	   System.out.println("ENTER THE COST MATRIX : ");
+	   for(i=0;i<n;i++)
+	   {
+		   for(j=0;j<n;j++)
+		   {
+			   cost[i][j]=sc.nextInt();
+		   }
+	   }
+	   
+	   min_cost=c(1,visited,n,cost);
+	   
+	   System.out.println("THE COST OF OPTIMAL TOUR IS "+min_cost);
+	   
+   }
+}
