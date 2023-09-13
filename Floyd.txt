@@ -24,12 +24,14 @@ public class Floyd
 		   }
 	   }
    }
+   System.out.println("the matrix is ");
    for(int i=0;i<n;i++)
    { 
 	   for(int j=0;j<n;j++)
 	   {
-		   System.out.println("the matrix is "+d[i][j]);
+		   System.out.print(d[i][j]+" ");
 	   }
+	   System.out.println();
    }
  }
 }
