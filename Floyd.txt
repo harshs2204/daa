@@ -35,3 +35,16 @@ public class Floyd
    }
  }
 }
+/*Enter the total number of nodes
+4
+Enter the adjacency matrix
+0 8 99 7
+3 0 2 99
+5 99 0 1
+2 99 99 0
+the matrix is 
+0 8 10 7 
+3 0 2 3 
+3 11 0 1 
+2 10 12 0 
+*/
