@@ -64,3 +64,15 @@ public class DPKnapsack
 		  DPKnapsack knapsack = new DPKnapsack(); knapsack.fill();
 	  }
 	}
+
+/*Enter Number of Items
+4
+Enter Weights of Items
+3 4 6 5
+Enter Profits of Items
+2 3 1 4
+Enter Capacity of Knapsack
+8
+Maximum Profit: 6
+Items Considered: 4 1 
+*/
