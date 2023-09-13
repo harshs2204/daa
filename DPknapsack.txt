@@ -68,11 +68,11 @@ public class DPKnapsack
 /*Enter Number of Items
 4
 Enter Weights of Items
-3 4 6 5
+2 3 4 5
 Enter Profits of Items
-2 3 1 4
+1 2 5 6
 Enter Capacity of Knapsack
 8
-Maximum Profit: 6
-Items Considered: 4 1 
+Maximum Profit: 8
+Items Considered: 4 2 
 */
