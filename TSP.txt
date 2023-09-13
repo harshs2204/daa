@@ -57,3 +57,14 @@ public class TSP
 	   
    }
 }
+
+/*
+ENTER THE NUMBER OF CITIES : 
+4
+ENTER THE COST MATRIX : 
+0 16 11 6
+8 0 13 16
+4 7 0 9
+5 12 2 0
+THE COST OF OPTIMAL TOUR IS 23
+*/
